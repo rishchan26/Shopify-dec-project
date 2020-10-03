@@ -68,7 +68,12 @@ public class Purchase
 	public String submitPayment(@ModelAttribute("shippingInfo") ShippingInfo shippingInfo, HttpServletRequest request) 
 	{
 		request.getSession().setAttribute("shippingInfo", shippingInfo);
-		return "redirect:/purchase/shippingEntry";
+		return "redirect:/purchase/viewOrder";
+	}
+	@RequestMapping(path = "/viewOrder", method = RequestMethod.GET)
+	public String viewOrder(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		return "ViewOrder";
 	}
 	
 }
