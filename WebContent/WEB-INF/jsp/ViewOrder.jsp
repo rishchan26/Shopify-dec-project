@@ -7,28 +7,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Shopify</title>
+<style>
+	body {
+		font-family: sans-serif;
+	} 
+	input[type="submit"] {
+		background: green;
+		border: 0px solid;
+		color: white;
+		padding: 20px;
+		margin: 10px;
+		cursor: pointer;
+	}
+	input:read-only {
+		border: 0px solid;
+	}
+	td {
+		padding: 20px;
+	}
+	form {
+		padding: 20px;
+	}
+	th {
+		padding: 20px;
+		font-size: 1.2rem;
+	}
+	input[type="text"] {
+		border: 1px solid black;
+		padding: 6px;
+	}
+</style>
 </head>
 <body>
 
-
-<table>
-	<h4> Your Order:</h4>
-	<c:forEach items="${order.items}" var="item" varStatus="loop">
-		<tr>
-			<td>
-				<c:out value="${item.name}"> </c:out>
-			</td>
-			<td>
-				<c:out value="$${item.price}"> </c:out>
-			</td>
-			<td>
-				<c:out value="${item.quantity}"> </c:out>
-			</td>
-		</tr>
-	</c:forEach> 
-</table> 
-	<h4>Payment Details:</h4>
+<form:form method="post" action="confirmOrder"> 
+	<h1>Please confirm your order and details:</h1>
 	<table>
+		<h4> Your Order:</h4>
+		<c:forEach items="${order.items}" var="item" varStatus="loop">
+			<tr>
+				<td>
+					<c:out value="${item.name}"> </c:out>
+				</td>
+				<td>
+					<c:out value="$${item.price}"> </c:out>
+				</td>
+				<td>
+					<c:out value="${item.quantity}"> </c:out>
+				</td>
+			</tr>
+		</c:forEach> 
+	</table> 
+	<table>
+		<h4>Payment Details:</h4>
 		<tr>
 			<td>
 				Credit Card Number: 
@@ -62,8 +93,8 @@
 			</td>
 		</tr>
 	</table>
-	<h4>Shipping Details:</h4>
 	<table>
+		<h4>Shipping Details:</h4>
 		<tr>
 			<td>
 				Name: 
@@ -113,7 +144,8 @@
 			</td>
 		</tr>   
 	</table>
-	
+	<input type="submit" value="Confirm Order">
+</form:form>
 
 </body>
 </html>

@@ -5,12 +5,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+	body {
+		font-family: sans-serif;
+	} 
+	input[type="submit"] {
+		background: green;
+		border: 0px solid;
+		color: white;
+		padding: 20px;
+		margin: 10px;
+		cursor: pointer;
+	}
+	input:read-only {
+		border: 0px solid;
+	}
+	td {
+		padding: 20px;
+	}
+	form {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+	th {
+		padding: 20px;
+		font-size: 1.2rem;
+	}
+	input[type="text"] {
+		border: 1px solid black;
+		padding: 6px;
+	}
+</style>
 <meta charset="UTF-8">
 <title>Shopify</title>
 </head>
 <body>
 <form:form modelAttribute="paymentInfo" method="post" action="submitPayment">    
 	<table>
+		<tr>
+			<td colspan="2">
+				<h1>Enter payment details:</h1>
+			</td>
+		</tr>
 		<tr>
 			<td>
 				Credit Card Number: 

@@ -75,5 +75,14 @@ public class Purchase
 	{
 		return "ViewOrder";
 	}
-	
+	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
+	public String submitOrder(HttpServletRequest request) 
+	{
+		return "redirect:/purchase/viewConfirmation";
+	}
+	@RequestMapping(path = "/viewConfirmation", method = RequestMethod.GET)
+	public String viewConfirmation(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		return "Confirmation";
+	}
 }

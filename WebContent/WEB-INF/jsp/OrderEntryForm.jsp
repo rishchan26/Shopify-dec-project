@@ -7,17 +7,62 @@
 <head>
 <meta charset="UTF-8">
 <title>Shopify</title>
+<style>
+	body {
+		font-family: sans-serif;
+	} 
+	input[type="submit"] {
+		background: green;
+		border: 0px solid;
+		color: white;
+		padding: 20px;
+		margin: 10px;
+		cursor: pointer;
+	}
+	td {
+		padding: 20px;
+	}
+	form {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+	th {
+		padding: 20px;
+		font-size: 1.2rem;
+	}
+	input[type="text"] {
+		border: 1px solid black;
+		padding: 6px;
+		text-align: center;
+	}
+	input:read-only {
+		border: 0px solid;
+	}
+</style>
 </head>
 <body>
 <form:form modelAttribute="order" method="post" action="purchase/submitItems">    
 	<table>
+		<tr>
+			<td colspan="3">
+				<h1>Hi! Place your order at Shopify</h1>
+			</td>
+		</tr>
+		<tr>
+			<th>Item</th>
+			<th>Price($)</th>
+			<th>Enter Quantity</th>
+		</tr>
 		<c:forEach items="${order.items}" var="item" varStatus="loop">
 			<tr>
 				<td>
-					<td><form:input path="items[${loop.index}].name" readonly="true" /></td>
+					<form:input path="items[${loop.index}].name" readonly="true" />
 				</td>
 				<td>
-					<td><form:input path="items[${loop.index}].price" readonly="true" /></td>
+					<form:input path="items[${loop.index}].price" readonly="true" />
 				</td>
 				<td>
 					<form:input path="items[${loop.index}].quantity" />
@@ -25,7 +70,7 @@
 			</tr>
 		</c:forEach>  
 			<tr>
-				<td colspan="2">
+				<td colspan="3">
 					<input type="submit" value="Purchase">
 				</td>  
 			</tr>
