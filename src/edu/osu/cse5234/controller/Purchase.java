@@ -24,10 +24,10 @@ public class Purchase
 	{// ... instantiate and set order object with items to display
 		Order order = new Order();
 		List<String> names = new ArrayList<String>(
-				Arrays.asList("ABC", "DEF", "GHI")
+				Arrays.asList("Potatoes", "Tomatoes", "Onions", "Chips", "Milk")
 		);
 		List<String> prices = new ArrayList<String>(
-				Arrays.asList("35", "40", "50")
+				Arrays.asList("3.50", "4.00", "2.50", "4.00", "5.60")
 		);
 		List<Item> items = new ArrayList<Item>();
 		for(int i = 0; i < names.size(); i++) {
