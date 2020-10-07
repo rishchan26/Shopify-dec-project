@@ -16,10 +16,16 @@ import edu.osu.cse5234.model.PaymentInfo;
 import edu.osu.cse5234.model.ShippingInfo;
 
 @Controller
-@RequestMapping("/purchase")
+@RequestMapping("/")
 public class Purchase 
 { 
 	@RequestMapping(method = RequestMethod.GET)
+	public String viewhomepage(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		return "header";
+	}
+	
+	@RequestMapping(path="/purchase", method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{// ... instantiate and set order object with items to display
 		Order order = new Order();
