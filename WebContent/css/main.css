@@ -28,3 +28,14 @@ ul {
 .btn > a {
 	color: white;
 }
+.avatar {
+	
+	width:128px !important;
+}
+
+.card {
+	padding-top : 20px;
+}
+.aboutus {
+	height:85vh !important;
+}

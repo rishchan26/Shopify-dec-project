@@ -24,6 +24,17 @@ public class Purchase
 	{
 		return "home";
 	}
+	@RequestMapping(path="/AboutUs", method = RequestMethod.GET)
+	public String viewAboutUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		return "AboutUs";
+	}
+	@RequestMapping(path="/ContactUs", method = RequestMethod.GET)
+	public String viewContactUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception
+	{
+		return "ContactUs";
+	}
+	
 	
 	@RequestMapping(path="/purchase", method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception 
