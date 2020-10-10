@@ -22,7 +22,7 @@ public class Purchase
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewhomepage(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
-		return "header";
+		return "home";
 	}
 	
 	@RequestMapping(path="/purchase", method = RequestMethod.GET)
