@@ -1,4 +1,5 @@
 package edu.osu.cse5234.controller;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,6 +40,29 @@ public class Purchase
 		order.setItems(items);
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
+	}
+	
+	@RequestMapping(path = "/checkQuantityItems", method = RequestMethod.POST)
+	public void checkQuantityItems(HttpServletRequest request, HttpServletResponse response) throws IOException 
+	{
+		String item = request.getParameter("item");
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+		if(item.equals("Potatoes") && quantity > 10) {
+			response.sendError(400, "Potatoes quantity should be less than 10");
+		}
+		if(item.equals("Tomatoes") && quantity > 15) {
+			response.sendError(400, "Tomatoes quantity should be less than 15");
+		}
+		if(item.equals("Onions") && quantity > 10) {
+			response.sendError(400, "Onions quantity should be less than 10");
+		}
+		if(item.equals("Chips") && quantity > 25) {
+			response.sendError(400, "Chips quantity should be less than 25");
+		}
+		if(item.equals("Milk") && quantity > 5) {
+			response.sendError(400, "Milk quantity should be less than 5");
+		}
+		
 	}
 	
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)

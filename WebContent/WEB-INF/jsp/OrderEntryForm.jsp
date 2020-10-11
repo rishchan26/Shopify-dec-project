@@ -42,6 +42,9 @@
 	input:read-only {
 		border: 0px solid;
 	}
+	#errorMsg {
+		color: red;
+	}
 </style>
 </head>
 <body>
@@ -58,6 +61,9 @@
 			<th>Price($)</th>
 			<th>Enter Quantity</th>
 		</tr>
+		<tr>
+			<td colspan="3"><p id="errorMsg"></p></td>
+		</tr>
 		<c:forEach items="${order.items}" var="item" varStatus="loop">
 			<tr>
 				<td>
@@ -67,7 +73,7 @@
 					<form:input path="items[${loop.index}].price" readonly="true" />
 				</td>
 				<td>
-					<form:input path="items[${loop.index}].quantity" />
+					<form:input path="items[${loop.index}].quantity" onchange="checkQuantity(this.value, '${item.name}')"/>
 				</td>
 			</tr>
 		</c:forEach>  
@@ -81,4 +87,30 @@
 </form:form></centre>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var errSet = new Set();
+	$("#orderEntry").submit(function(e) {
+		if(errSet.size > 0) {
+			e.preventDefault();	
+			alert("Please check quantities")
+		}
+	});
+	function checkQuantity(val, item) {
+		if(val == "")
+			val = 0;
+		$.post("http://localhost:9080/Shopify/purchase/checkQuantityItems", {
+			"item": item,
+			"quantity": val
+		})
+		.done(function() {
+			errSet.delete(item);
+			$('#errorMsg')[0].innerHTML = "";
+		})
+		.fail(function(response) {
+			errSet.add(item);
+			$('#errorMsg')[0].innerHTML = response.responseText;
+		});
+	};
+</script>
 </html>
