@@ -7,6 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Shopify</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <style>
 	body {
 		font-family: sans-serif;
@@ -39,7 +42,7 @@
 </style>
 </head>
 <body>
-
+<jsp:include page="header.jsp"></jsp:include>
 <form:form method="post" action="confirmOrder"> 
 	<h1>Please confirm your order and details:</h1>
 	<table>
@@ -146,6 +149,6 @@
 	</table>
 	<input type="submit" value="Confirm Order">
 </form:form>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

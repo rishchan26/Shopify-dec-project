@@ -16,27 +16,10 @@ import edu.osu.cse5234.model.PaymentInfo;
 import edu.osu.cse5234.model.ShippingInfo;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/purchase")
 public class Purchase 
-{ 
-	@RequestMapping(method = RequestMethod.GET)
-	public String viewhomepage(HttpServletRequest request, HttpServletResponse response) throws Exception
-	{
-		return "home";
-	}
-	@RequestMapping(path="/AboutUs", method = RequestMethod.GET)
-	public String viewAboutUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception
-	{
-		return "AboutUs";
-	}
-	@RequestMapping(path="/ContactUs", method = RequestMethod.GET)
-	public String viewContactUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception
-	{
-		return "ContactUs";
-	}
-	
-	
-	@RequestMapping(path="/purchase", method = RequestMethod.GET)
+{	
+	@RequestMapping( method = RequestMethod.GET)
 	public String viewOrderEntryForm(HttpServletRequest request, HttpServletResponse response) throws Exception 
 	{// ... instantiate and set order object with items to display
 		Order order = new Order();
@@ -57,6 +40,7 @@ public class Purchase
 		request.setAttribute("order", order);
 		return "OrderEntryForm";
 	}
+	
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) 
 	{
