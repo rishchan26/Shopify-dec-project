@@ -7,6 +7,40 @@
 <head>
 <link rel="stylesheet" href="/../css/main.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script type="text/javascript">
+function validate(){
+    var f=document.getElementById("shippingform");
+    var name=f["name"].value;
+    var letters = /^[A-Za-z\s]+$/;
+    var numbers = /^[0-9]+$/;
+    if(!name.match(letters))
+    {
+    	alert("Enter a valid name");
+    	return false;
+    }
+    var city=f["city"].value;
+    if(!city.match(letters))
+    {
+    	alert("Enter a valid city name");
+    	return false;
+    }
+    var state=f["state"].value;
+    if(!state.match(letters))
+    {
+    	alert("Enter a valid state name");
+    	return false;
+    }
+    var zip=f["zip"].value;
+    if(!zip.match(/\d{5}/) && !zip.match(/\d{6}/))
+    {
+    	alert("Enter valid zip code");
+    	//console.log(cvv.match("\d\d\d"));
+    	return false;	
+    }
+    
+    return true;
+}
+</script>
 
 <style>
 	body {
@@ -45,7 +79,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<form:form modelAttribute="shippingInfo" method="post" action="submitShipping">    
+<form:form id="shippingform" modelAttribute="shippingInfo" method="post" action="submitShipping" onsubmit="return validate()">    
 	<table>
 	<tr>
 		<td colspan="2">
@@ -57,7 +91,7 @@
 				Name: 
 			</td>
 			<td>
-				<form:input path="name" />
+				<form:input id="name" required="true" path="name" />
 			</td>
 		</tr>
 		<tr>
@@ -65,7 +99,7 @@
 				Address Line 1: 
 			</td>
 			<td>
-				<form:input path="addressLine1" />
+				<form:input required="true" path="addressLine1" />
 			</td>
 		</tr>
 		<tr>
@@ -73,7 +107,7 @@
 				Address Line 2: 
 			</td>
 			<td>
-				<form:input path="addressLine2" />
+				<form:input  path="addressLine2" />
 			</td>
 		</tr>
 		<tr>
@@ -81,7 +115,7 @@
 				City: 
 			</td>
 			<td>
-				<form:input path="city" />
+				<form:input id='city' required="true" path="city" />
 			</td>
 		</tr>
 		<tr>
@@ -89,7 +123,7 @@
 				State: 
 			</td>
 			<td>
-				<form:input path="state" />
+				<form:input id ="state" required="true" path="state" />
 			</td>
 		</tr> 
 		<tr>
@@ -97,7 +131,7 @@
 				ZIP: 
 			</td>
 			<td>
-				<form:input path="zip" />
+				<form:input id ="zip" required="true" path="zip" />
 			</td>
 		</tr>   
 		<tr>
