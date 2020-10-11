@@ -26,10 +26,8 @@
 		padding: 20px;
 	}
 	form {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		position: relative;
+		
 		text-align: center;
 	}
 	th {
@@ -48,7 +46,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<form:form modelAttribute="order" method="post" action="purchase/submitItems">    
+<centre><form:form id ="orderEntry" modelAttribute="order" method="post" action="purchase/submitItems">    
 	<table>
 		<tr>
 			<td colspan="3">
@@ -75,11 +73,12 @@
 		</c:forEach>  
 			<tr>
 				<td colspan="3">
-					<input type="submit" value="Purchase">
+					<input type="submit"  value="Purchase">
 				</td>  
 			</tr>
 	</table>
-</form:form>
+	
+</form:form></centre>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

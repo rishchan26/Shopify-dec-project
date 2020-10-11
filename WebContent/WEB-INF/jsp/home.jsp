@@ -27,7 +27,7 @@
 	<div class="col-sm-12 col-md-6">
 		<div class="jumbotron">
 			<h1>Our Services</h1>
-			<ul>
+			<ul class="homepage-list">
 				<li>Free delivery at home</li>
 				<li>Pay after delivery</li>
 				<li>Lorem</li>
@@ -38,7 +38,7 @@
 	<div class="col-sm-12 col-md-6">
 		<div class="jumbotron">
 			<h1>Our products</h1>
-			<ul>
+			<ul class="homepage-list">
 				<li>Grocery</li>
 				<li>Fresh Vegetables</li>
 				<li>Dairy products</li>

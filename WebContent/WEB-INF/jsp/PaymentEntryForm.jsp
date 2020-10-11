@@ -7,7 +7,15 @@
 <head>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<script type="text/javascript">
+function validate(){
+    var f=document.getElementsByClassName("paymentform");
+    console.log(f[0].value);
+    alert("wohoo");
+    
+    return true;
+}
+</script>
 <style>
 	body {
 		font-family: sans-serif;
@@ -27,10 +35,8 @@
 		padding: 20px;
 	}
 	form {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		position: relative;
+	
 		text-align: center;
 	}
 	th {
@@ -47,7 +53,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<form:form modelAttribute="paymentInfo" method="post" action="submitPayment">    
+<form:form id = "paymentform" modelAttribute="paymentInfo" method="post" action="submitPayment" onsubmit="return validate()">    
 	<table>
 		<tr>
 			<td colspan="2">
@@ -59,7 +65,7 @@
 				Credit Card Number: 
 			</td>
 			<td>
-				<form:input path="cardNumber" />
+				<form:input required="true" id="ccn" path="cardNumber" />
 			</td>
 		</tr>
 		<tr>
@@ -67,7 +73,7 @@
 				Expiration Date: 
 			</td>
 			<td>
-				<form:input path="expirationDate" />
+				<form:input required="true" id="ed" path="expirationDate" />
 			</td>
 		</tr>
 		<tr>
@@ -75,7 +81,7 @@
 				CVV Code: 
 			</td>
 			<td>
-				<form:input path="cvvCode" />
+				<form:input required="true" id="cvv" path="cvvCode" />
 			</td>
 		</tr>
 		<tr>
@@ -83,7 +89,7 @@
 				Card Holder Name: 
 			</td>
 			<td>
-				<form:input path="cardHolderName" />
+				<form:input required="true" path="cardHolderName" />
 			</td>
 		</tr>  
 		<tr>
