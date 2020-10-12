@@ -10,6 +10,9 @@
 a {
 	color: white;
 }
+.page-footer {
+	color: white;
+}
 </style>
 </head>
 <body>
@@ -70,11 +73,9 @@ a {
       <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
 
         <!-- Content -->
-        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <h6 class="text-uppercase font-weight-bold">Shopify</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <p>Our mission is to create a world where everyone has access to the food they love and more time to enjoy it together.</p>
 
       </div>
       <!-- Grid column -->
@@ -86,16 +87,16 @@ a {
         <h6 class="text-uppercase font-weight-bold">Products</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a class="dark-grey-text" href="#!">MDBootstrap</a>
+          <a class="dark-grey-text" href="#!">Grocery</a>
         </p>
         <p>
-          <a class="dark-grey-text" href="#!">MDWordPress</a>
+          <a class="dark-grey-text" href="#!">Fresh vegetables</a>
         </p>
         <p>
-          <a class="dark-grey-text" href="#!">BrandFlow</a>
+          <a class="dark-grey-text" href="#!">Dairy Products</a>
         </p>
         <p>
-          <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
+          <a class="dark-grey-text" href="#!">Kitchenware</a>
         </p>
 
       </div>
@@ -108,13 +109,10 @@ a {
         <h6 class="text-uppercase font-weight-bold">Useful links</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a class="dark-grey-text" href="#!">Your Account</a>
+          <a class="dark-grey-text" href="#!">Begin Shopping</a>
         </p>
         <p>
-          <a class="dark-grey-text" href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a class="dark-grey-text" href="#!">Shipping Rates</a>
+          <a class="dark-grey-text" href="#!">About Us</a>
         </p>
         <p>
           <a class="dark-grey-text" href="#!">Help</a>
@@ -132,11 +130,11 @@ a {
         <p>
           <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
         <p>
-          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+          <i class="fas fa-envelope mr-3"></i> help@shopify.com</p>
         <p>
-          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+          <i class="fas fa-phone mr-3"></i> +1800-000-000</p>
         <p>
-          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          <i class="fas fa-print mr-3"></i> +1800-000-000</p>
 
       </div>
       <!-- Grid column -->
@@ -149,7 +147,7 @@ a {
 
   <!-- Copyright -->
   <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
-    <a class="dark-grey-text" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <span>Shopify.com</span>
   </div>
   <!-- Copyright -->
 

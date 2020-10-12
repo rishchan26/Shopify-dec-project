@@ -20,7 +20,7 @@
 </div>
 <div class="jumbotron">
 	<p class="lead">
-		Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		Our vision is to be earth's most customer-centric company; to build a place where people can come to find and discover anything they might want to buy online.
 	</p>
 </div>
 <div class="row">
@@ -28,10 +28,10 @@
 		<div class="jumbotron">
 			<h1>Our Services</h1>
 			<ul class="homepage-list">
-				<li>Free delivery at home</li>
-				<li>Pay after delivery</li>
-				<li>Lorem</li>
-				<li>Lorem</li>
+				<li>Shop the products you love</li>
+				<li>Get same-day delivery or pickup</li>
+				<li>Save time & money</li>
+				<li>Deals that delight</li>
 			</ul>
 		</div>
 	</div>

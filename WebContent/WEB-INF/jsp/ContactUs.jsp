@@ -12,6 +12,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div class="jumbotron">
 	<h1>Contact</h1>
+	<p class"lead">Our professionals are available 24/7 for you, we'll get back to you as soon as possible!</p>
 	<p>help@shopify.com</p>
 	<p>+1800-000-000</p>
 </div>
