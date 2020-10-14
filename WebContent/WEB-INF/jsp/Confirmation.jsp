@@ -51,7 +51,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 	<h1>Thanks for shopping with us!</h1>
-	<p>Your order #ABCD12345678900 has been confirmed</p>
+	<p>Your order <c:out value="${confirmation}"></c:out> has been confirmed</p>
 	<div id="orderDetails">
 		<table>
 			<tr>

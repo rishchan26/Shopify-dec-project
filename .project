@@ -3,6 +3,7 @@
 	<name>Shopify</name>
 	<comment></comment>
 	<projects>
+		<project>Shopify-InventoryManagement-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
